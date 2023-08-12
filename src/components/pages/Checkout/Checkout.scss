@@ -1,0 +1,173 @@
+.menu {
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    p {
+        opacity: 0.3;
+    }
+    span {
+        opacity: 0.3;
+    }
+    .menunegative {
+        opacity: 0.7;
+    }
+}
+
+.checkoutwrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+    .checkoutleft {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+
+        .checklefttop {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+
+            .shippingcountry {
+                width: 100%;
+                h1 {
+                    font-size: 22px;
+                    font-weight: 500;
+                    opacity: 0.8;
+                }
+
+                .countrydropdown {
+                    margin-top: 10px;
+                    width: 100%;
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    font-weight: 500;
+                    border-radius: 10px;
+                    opacity: 0.7;
+                }
+            }
+
+            .line {
+                margin: 20px 0;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                opacity: 0.5;
+            }
+
+            .shippingaddress {
+                width: 100%;
+                h1 {
+                    font-size: 22px;
+                    font-weight: 500;
+                    opacity: 0.8;
+                }
+
+                .checkform {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+
+                    .checklabel {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin: 10px 0;
+                        opacity: 0.8;
+                    }
+
+                    .checkinput {
+                        padding: 15px;
+                        border-radius: 10px;
+                        font-size: 16px;
+                        color: rgba(0, 0, 0, 0.5);
+                        font-weight: 500;
+                        outline: none;
+                        background: #ebeef2;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+                    .checkcityregion {
+                        display: flex;
+                        gap: 10px;
+                        align-items: flex-end;
+                        .checkcity {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .countrydropdown {
+                            flex: 1;
+                            width: 100%;
+                            outline: none;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            padding: 20px;
+                            font-weight: 500;
+                            border-radius: 10px;
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkleftbottom {
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h1 {
+                font-size: 22px;
+                font-weight: 500;
+
+                opacity: 0.8;
+            }
+            .shippingmethod {
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+
+                .methodship {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .methodradio {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .radioship {
+                            width: 20px;
+                            height: 20px;
+                            accent-color: #000;
+                        }
+
+                        .radiolabel {
+                            font-size: 18px;
+                            opacity: 0.9;
+                            font-weight: 500;
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+                        opacity: 0.8;
+                        font-weight: 700;
+                    }
+                }
+                p {
+                    padding-left: 30px;
+                    padding-top: 5px;
+                    font-size: 18px;
+                    opacity: 0.4;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

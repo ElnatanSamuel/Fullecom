@@ -1,0 +1,45 @@
+.accountuserwrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 500;
+        opacity: 0.8;
+    }
+
+    .accountuser {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        p {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 600;
+
+            span {
+                font-size: 16px;
+                font-weight: 600;
+                opacity: 0.6;
+            }
+        }
+
+        .accountuserbtns {
+            display: flex;
+            gap: 20px;
+            button {
+                align-self: flex-start;
+                padding: 15px;
+                color: white;
+                border-radius: 10px;
+
+                font-weight: 700;
+            }
+        }
+    }
+
+    .trackorderuser {
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,96 @@
+.footer {
+    background: #ebeef2;
+    height: 360px;
+    // position: fixed;
+    // bottom: 0;
+    // width: 100%;
+
+    .footerwrapper {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+
+        .top {
+            display: flex;
+
+            .left {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                h1 {
+                    font-size: 28px;
+                    font-weight: 600;
+                    opacity: 0.7;
+                }
+                p {
+                    font-weight: 500;
+                    width: 400px;
+                    opacity: 0.4;
+                }
+            }
+            .center {
+                flex: 3;
+                display: flex;
+                align-items: center;
+                gap: 80px;
+
+                .col {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    h1 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        opacity: 0.7;
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        li {
+                            cursor: pointer;
+                            list-style: none;
+                            opacity: 0.4;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h1 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+
+            .line {
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            p {
+                margin-top: 35px;
+                opacity: 0.4;
+                font-size: 14px;
+                font-weight: 600;
+                text-align: center;
+            }
+        }
+    }
+}

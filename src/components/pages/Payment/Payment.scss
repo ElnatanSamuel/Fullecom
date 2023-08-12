@@ -1,0 +1,169 @@
+.menu {
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    p {
+        opacity: 0.3;
+    }
+    span {
+        opacity: 0.3;
+    }
+    .menunegative {
+        opacity: 0.7;
+    }
+}
+
+.paymentwrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    .paymentleft {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .paymentmethods {
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            h1 {
+                font-size: 22px;
+                font-weight: 500;
+                opacity: 0.8;
+                span {
+                    font-size: 14px;
+                    opacity: 0.6;
+                }
+            }
+
+            .selectpaymentmethods {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .paymentaccordion {
+                    padding: 10px;
+                    border-radius: 10px;
+                    .sorttitle {
+                        font-size: 18px;
+                        font-weight: 500;
+                        opacity: 0.8;
+                    }
+
+                    .selectpaymentinput {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        input {
+                            flex: 1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            color: rgba(0, 0, 0, 0.5);
+                            font-weight: 500;
+                            outline: none;
+                            background: #ebeef2;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                        }
+
+                        .selectpaymentinputexpiry {
+                            display: flex;
+                            gap: 10px;
+                        }
+                    }
+                }
+
+                .selectpaymentclosed {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 20px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;
+                    background: rgba(0, 0, 0, 0.1);
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        opacity: 0.8;
+                        padding-left: 10px;
+                    }
+
+                    img {
+                        width: 50px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+
+        .billingaddress {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+
+            h1 {
+                font-size: 22px;
+                font-weight: 500;
+                opacity: 0.8;
+            }
+            .checkform {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+
+                .checklabel {
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin: 10px 0;
+                    opacity: 0.8;
+                }
+
+                .checkinput {
+                    padding: 15px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    color: rgba(0, 0, 0, 0.5);
+                    font-weight: 500;
+                    outline: none;
+                    background: #ebeef2;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                .countrydropdown {
+                    flex: 1;
+                    width: 100%;
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    font-weight: 500;
+                    border-radius: 10px;
+                    opacity: 0.7;
+                    margin-top: 20px;
+                }
+                .checkcityregion {
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-end;
+                    .checkcity {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .countrydropdown {
+                        flex: 1;
+                        width: 100%;
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        padding: 20px;
+                        font-weight: 500;
+                        border-radius: 10px;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+}

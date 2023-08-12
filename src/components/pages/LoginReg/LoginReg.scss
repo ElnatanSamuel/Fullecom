@@ -1,0 +1,208 @@
+.loginreg {
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+    .loginwrapper {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        padding: 0px 80px;
+        .loginleft {
+            flex: 3;
+            h1 {
+                font-size: 26px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                opacity: 0.6;
+            }
+            .loginline {
+                border: 0.5px solid rgba(0, 0, 0, 0.1);
+                width: 100%;
+                margin-bottom: 40px;
+            }
+            .welcome {
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+            .regemailerror {
+                margin-top: 20px;
+                width: 100%;
+                padding: 15px;
+                border-radius: 10px;
+                color: white;
+                text-align: center;
+                opacity: 0.85;
+            }
+
+            form {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+
+                label {
+                    font-size: 14px;
+                    font-weight: 700;
+                    opacity: 0.7;
+                }
+
+                .textfield {
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    width: 100%;
+                    &:focus {
+                        border: 1px solid #9ecefd;
+                    }
+                }
+                button {
+                    padding: 15px 40px;
+                    background: #efecec;
+                    border-radius: 30px;
+                    font-weight: 800;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    color: rgba(0, 0, 0, 0.6);
+
+                    &:hover {
+                        background: black;
+                        color: white;
+                    }
+                }
+            }
+            .passreset {
+                font-size: 14px;
+                font-weight: 500;
+                opacity: 0.6;
+            }
+            .checkdiv {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+        .logincenter {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .vertline {
+                border: 0.1px solid rgba(0, 0, 0, 0.1);
+                height: 100%;
+            }
+            .or {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 100px;
+                border: 0.1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 50%;
+                font-size: 14px;
+                font-weight: 700;
+                opacity: 0.7;
+            }
+        }
+        .loginright {
+            flex: 3;
+            h1 {
+                font-size: 26px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                opacity: 0.6;
+            }
+            .loginline {
+                border: 0.5px solid rgba(0, 0, 0, 0.1);
+                width: 100%;
+                margin-bottom: 40px;
+            }
+            .welcome {
+                font-size: 14px;
+                opacity: 0.7;
+            }
+
+            .regemailerror {
+                margin-top: 20px;
+                width: 100%;
+                padding: 15px;
+                border-radius: 10px;
+                color: white;
+                text-align: center;
+                opacity: 0.85;
+            }
+
+            form {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+
+                label {
+                    font-size: 14px;
+                    font-weight: 700;
+                    opacity: 0.7;
+                }
+
+                .textfield {
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    width: 100%;
+                    &:focus {
+                        border: 1px solid #9ecefd;
+                    }
+                }
+                button {
+                    padding: 15px 30px;
+                    background: #efecec;
+                    border-radius: 30px;
+                    font-weight: 800;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    color: rgba(0, 0, 0, 0.6);
+
+                    &:hover {
+                        background: black;
+                        color: white;
+                    }
+                }
+            }
+            .passreset {
+                font-size: 14px;
+                font-weight: 500;
+                opacity: 0.6;
+            }
+            .checkdiv {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .loginreg {
+        .loginwrapper {
+            padding: 0px 40px;
+            flex-direction: column;
+            .logincenter {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 325px) {
+    .loginreg {
+        .loginwrapper {
+            padding: 0px 20px;
+        }
+    }
+}

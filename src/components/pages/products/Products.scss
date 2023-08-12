@@ -1,0 +1,80 @@
+.menu {
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    p {
+        opacity: 0.3;
+    }
+    span {
+        opacity: 0.3;
+    }
+    .menunegative {
+        opacity: 0.5;
+    }
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+
+    .left {
+        flex: 1;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        height: 100%;
+
+        .catprice {
+            font-weight: 600;
+            opacity: 0.6;
+        }
+
+        .pricerange {
+            display: flex;
+            gap: 10px;
+            opacity: 0.6;
+            font-weight: 600;
+        }
+
+        .cattitle {
+            font-weight: 600;
+            opacity: 0.6;
+        }
+
+        .subcategory {
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0.9;
+            font-weight: 600;
+            .catsub {
+                cursor: pointer;
+            }
+        }
+    }
+    .right {
+        flex: 3;
+        .results {
+            display: flex;
+            // align-items: center;
+            justify-content: space-between;
+            p {
+                opacity: 0.6;
+                font-weight: 600;
+            }
+
+            .sortby {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+    }
+}
