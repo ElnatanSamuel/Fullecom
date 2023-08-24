@@ -38,7 +38,7 @@
 
             .mainimgproduct {
                 width: 100%;
-                max-height: 800px;
+                height: 500px;
                 object-fit: cover;
             }
         }
@@ -109,7 +109,7 @@
         }
         .quantitybtn {
             display: flex;
-            margin-top: 10px;
+            margin-top: 20px;
             gap: 20px;
             .qualityadjust {
                 padding: 10px 15px;
@@ -126,17 +126,93 @@
             }
 
             button {
-                padding: 10px 20px;
+                padding: 15px 50px;
                 background: #000;
                 border-radius: 10px;
                 color: white;
                 opacity: 0.9;
-                font-weight: 300;
+                font-weight: 400;
             }
         }
     }
 }
 
-.relatedproducts {
+.relatedproductsbig {
     margin-top: 100px;
+}
+.relatedproductstab {
+    margin-top: 100px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        font-size: 14px;
+    }
+
+    .productwrapper {
+        flex-direction: column;
+        .productleft {
+            flex-direction: column-reverse;
+            .productimg {
+                display: flex;
+                gap: 20px;
+                .imgproduct {
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .productright {
+            h1 {
+                font-size: 22px;
+            }
+            .productprices {
+                .productorignalprice {
+                    font-size: 20px;
+                }
+                .productcurrentprice {
+                    font-size: 14px;
+                }
+            }
+            .productdesc {
+                p {
+                    font-size: 16px;
+                }
+                span {
+                    font-size: 12px;
+                }
+            }
+            .aboutproduct {
+                .abouttitleprod {
+                    font-size: 16px;
+                }
+                .aboutitem {
+                    span {
+                        font-size: 14px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .quantitybtn {
+                margin-top: 30px;
+                button {
+                    padding: 10px 30px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .relatedproductstab {
+        display: block;
+    }
+    .relatedproductsbig {
+        display: none;
+    }
 }

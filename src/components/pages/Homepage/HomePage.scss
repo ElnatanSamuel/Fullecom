@@ -1,0 +1,33 @@
+.homepage {
+    .feattab {
+        display: none;
+    }
+
+    .featmob {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage {
+        .featbig {
+            display: none;
+        }
+
+        .feattab {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .homepage {
+        .feattab {
+            display: none;
+        }
+
+        .featmob {
+            display: block;
+        }
+    }
+}

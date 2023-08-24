@@ -1,0 +1,101 @@
+.productsmob {
+    .swiper-pagination .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #212831;
+        width: 20px;
+        height: 5px;
+        border-radius: 10px;
+    }
+
+    .swiper-pagination {
+        top: 500px;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet-active {
+        background-color: rgb(184, 184, 184);
+        width: 30px;
+        height: 7px;
+        border-radius: 10px;
+    }
+
+    margin-top: 40px;
+    padding: 0 5px;
+    position: relative;
+    .sliderthing {
+        height: 650px;
+    }
+    .product {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .top {
+            position: relative;
+
+            img {
+                width: 400px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            p {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                color: white;
+                border-radius: 5px;
+                padding: 2px 10px;
+                font-weight: 400;
+                font-size: 12px;
+                background: #cc1205;
+            }
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .description {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    font-weight: 600;
+                    opacity: 0.7;
+                    font-size: 14px;
+                }
+
+                .prices {
+                    display: flex;
+                    gap: 5px;
+
+                    .orignalprice {
+                        font-size: 18px;
+                        font-weight: 600;
+                        opacity: 0.8;
+                    }
+
+                    .currentprice {
+                        font-size: 12px;
+                        opacity: 0.5;
+                        font-weight: 700;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                button {
+                    padding: 10px 12px;
+                    background: #212831;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

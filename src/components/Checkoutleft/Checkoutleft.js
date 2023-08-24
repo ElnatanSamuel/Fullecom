@@ -1,14 +1,59 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import { CartContext } from "../../context/CartContext";
 
-const Checkoutleft = () => {
-  const [shippingCountry, setShippingCountry] = useState("");
-  const [shippingRegion, setShippingRegion] = useState("");
+const Checkoutleft = ({ subtotal }) => {
+  const {
+    shippingCountry,
+    setShippingCountry,
+    shippingRegion,
+    setShippingRegion,
+    shippingMethod,
+    setShippingMethod,
+    setGrandTotal,
+    fullName,
+    setFullName,
+    email,
+    setEmail,
+    phoneNumber,
+    setPhoneNumber,
+    streetName,
+    setStreetName,
+    city,
+    setCity,
+    postalCode,
+    setPostalCode,
+    setFormNotPassed,
+    formNotPassed,
+    areItemsInCart,
+  } = useContext(CartContext);
+
+  const handleShippingChange = (e) => {
+    if (e.target.value === "Free") {
+      setGrandTotal(subtotal + 0);
+      setShippingMethod(0);
+    } else if (e.target.value === "Regular") {
+      setGrandTotal(subtotal + 7.5);
+      setShippingMethod(7.5);
+    } else {
+      setGrandTotal(subtotal + 22.5);
+      setShippingMethod(22.5);
+    }
+  };
 
   return (
     <div className="checkoutleft">
       <div className="checklefttop">
         <div className="shippingcountry">
+          {formNotPassed === true ? (
+            <p className="w-full p-4 bg-red-600 text-white font-bold text-center rounded-lg mb-6">
+              Please fill all the required fields
+            </p>
+          ) : areItemsInCart === false ? (
+            <p className="w-full p-4 bg-red-600 text-white font-bold text-center rounded-lg mb-6">
+              No items in cart
+            </p>
+          ) : null}
           <h1>Select shipping country</h1>
           <CountryDropdown
             value={shippingCountry}
@@ -26,8 +71,10 @@ const Checkoutleft = () => {
             <input
               type="text"
               id="checkfullname"
+              value={fullName}
               placeholder="Enter your full name"
               className="checkinput"
+              onChange={(e) => setFullName(e.target.value)}
             />
 
             <label htmlFor="checkmail" className="checklabel">
@@ -36,8 +83,10 @@ const Checkoutleft = () => {
             <input
               type="text"
               id="checkmail"
+              value={email}
               placeholder="Enter your email address"
               className="checkinput"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="checkphone" className="checklabel">
               Phone number*
@@ -45,8 +94,10 @@ const Checkoutleft = () => {
             <input
               type="text"
               id="checkphone"
+              value={phoneNumber}
               placeholder="Enter your phone number(only digits)"
               className="checkinput"
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <label htmlFor="checkstreet" className="checklabel">
               Street name and house number*
@@ -54,8 +105,10 @@ const Checkoutleft = () => {
             <input
               type="text"
               id="checkstreet"
+              value={streetName}
               placeholder="Enter your street name and house number"
               className="checkinput"
+              onChange={(e) => setStreetName(e.target.value)}
             />
             <div className="checkcityregion">
               <div className="checkcity">
@@ -65,8 +118,10 @@ const Checkoutleft = () => {
                 <input
                   type="text"
                   id="checkcity"
+                  value={city}
                   placeholder="Enter your city"
                   className="checkinput"
+                  onChange={(e) => setCity(e.target.value)}
                 />
               </div>
               <RegionDropdown
@@ -82,8 +137,10 @@ const Checkoutleft = () => {
             <input
               type="text"
               id="checkpostal"
+              value={postalCode}
               placeholder="Enter your postal code"
               className="checkinput"
+              onChange={(e) => setPostalCode(e.target.value)}
             />
           </form>
         </div>
@@ -97,7 +154,9 @@ const Checkoutleft = () => {
                 className="radioship"
                 type="radio"
                 name="freeship"
+                value="Free"
                 id="freeship"
+                onChange={(e) => handleShippingChange(e)}
               />
               <label className="radiolabel" htmlFor="freeship">
                 Free shipping
@@ -114,8 +173,10 @@ const Checkoutleft = () => {
               <input
                 className="radioship"
                 type="radio"
+                value="Regular"
                 name="freeship"
                 id="regular"
+                onChange={(e) => handleShippingChange(e)}
               />
               <label className="radiolabel" htmlFor="regular">
                 Regular shipping
@@ -133,7 +194,9 @@ const Checkoutleft = () => {
                 className="radioship"
                 type="radio"
                 name="freeship"
+                value="Express"
                 id="expressship"
+                onChange={(e) => handleShippingChange(e)}
               />
               <label className="radiolabel" htmlFor="expressship">
                 Express shipping

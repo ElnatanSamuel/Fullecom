@@ -5,6 +5,9 @@ import Advert from "../../Advert/Advert";
 import FeaturedProd from "../../FeaturedProd/FeaturedProd";
 import Brands from "../../Brands/Brands";
 import Newsletter from "../../Newsletter/Newsletter";
+import FeaturedProdMob from "../../FeaturedProdMob/FeaturedProdMob";
+import "./HomePage.scss";
+import FeaturedProdTab from "../../FeaturedProdTab/FeaturedProdTab";
 
 const Homepage = () => {
   return (
@@ -12,7 +15,15 @@ const Homepage = () => {
       <Hero />
       <Brands />
       <CuratedPicks />
-      <FeaturedProd />
+      <div className="featbig">
+        <FeaturedProd />
+      </div>
+      <div className="feattab">
+        <FeaturedProdTab />
+      </div>
+      <div className="featmob">
+        <FeaturedProdMob />
+      </div>
       <Advert />
       <Newsletter />
     </div>

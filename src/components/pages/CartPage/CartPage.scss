@@ -2,12 +2,14 @@
     display: flex;
     align-items: start;
     gap: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 200px;
 
     .cartpageleft {
         flex: 2;
+        width: 100%;
     }
     .cartpageright {
+        width: 100%;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -79,6 +81,41 @@
                 font-size: 18px;
                 font-weight: 400;
                 margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cartwrapper {
+        margin-bottom: 100px;
+        flex-direction: column;
+        .cartpageright {
+            .cartchecktop {
+                .cartcheckleft {
+                    font-size: 16px;
+                }
+                .cartcheckright {
+                    .cartsubtotal {
+                        font-size: 18px;
+                    }
+                    .cartdiscount {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .cartcheckbottom {
+                .checktotal {
+                    .cartgrandtotal {
+                        font-size: 18px;
+                    }
+                    .checkgrandtotal {
+                        font-size: 20px;
+                    }
+                }
+                .checkoutbtn {
+                    font-size: 16px;
+                }
             }
         }
     }

@@ -94,3 +94,103 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        height: 300px;
+        .footerwrapper {
+            padding: 80px 15px 0 15px;
+            .top {
+                .left {
+                    h1 {
+                        font-size: 22px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+                .center {
+                    display: none;
+                }
+
+                .right {
+                    h1 {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .bottom {
+                .line {
+                    width: 100%;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                p {
+                    margin-top: 20px;
+                    opacity: 0.4;
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .footer {
+        height: 200px;
+        .footerwrapper {
+            padding-top: 40px;
+            .top {
+                .left {
+                    h1 {
+                        font-size: 18px;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                .right {
+                    display: none;
+                }
+            }
+
+            .bottom {
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .footer {
+        height: 200px;
+        .footerwrapper {
+            .top {
+                .left {
+                    h1 {
+                        font-size: 16px;
+                    }
+                    p {
+                        font-size: 10px;
+                        width: 300px;
+                    }
+                }
+
+                .right {
+                    display: none;
+                }
+            }
+
+            .bottom {
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

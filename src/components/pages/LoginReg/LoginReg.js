@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./LoginReg.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLoggedIn } from "../../../redux/UserSlice";
+import ReactLoading from "react-loading";
 
 const LoginReg = () => {
   const [newFirstname, setNewFirstname] = useState("");
@@ -14,6 +17,9 @@ const LoginReg = () => {
   const [EmailAlreadyExists, setEmailAlreadyExists] = useState(false);
   const [userDontExist, setUserDontExist] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [isLoadingLogUser, setIsLoadingLogUser] = useState(false);
+  const [isLoadingRegUser, setIsLoadingRegUser] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -33,19 +39,28 @@ const LoginReg = () => {
       newEmail,
       newPassword,
     };
+
     axios
-      .post("http://localhost:5000/api/register", userData)
+      .post(
+        "http://ecomserver.elnatandev.elnatansamueldev.com/api/register",
+        userData
+      )
       .then((res) => {
         setEmailAlreadyExists(res.data);
         setEmptyFields(false);
         setTimeout(() => {
           setEmailAlreadyExists(false);
         }, 4000);
+        setIsLoadingRegUser(true);
 
-        if (res.data === false) {
+        setTimeout(() => {
+          setIsLoadingRegUser(false);
+        }, 10000);
+        if (res.data.userEmailExists === false) {
           setTimeout(() => {
             navigate("/");
-          }, 2000);
+          }, 4000);
+          dispatch(userLoggedIn(res.data.UserAccountData));
         }
       })
       .catch((err) => {
@@ -61,7 +76,10 @@ const LoginReg = () => {
       loginPassword,
     };
     axios
-      .post("http://localhost:5000/api/login", loginData)
+      .post(
+        "http://ecomserver.elnatandev.elnatansamueldev.com/api/login",
+        loginData
+      )
       .then((res) => {
         if (res.data.UserDontExist === true) {
           setUserDontExist(true);
@@ -75,6 +93,13 @@ const LoginReg = () => {
           setTimeout(() => {
             navigate("/");
           }, 2000);
+
+          dispatch(userLoggedIn(res.data.UserEmail));
+          setIsLoadingLogUser(true);
+
+          setTimeout(() => {
+            setIsLoadingLogUser(false);
+          }, 10000);
         }
       })
       .catch((err) => console.log(err));
@@ -115,7 +140,17 @@ const LoginReg = () => {
               <input type="checkbox" className="checkbox" id="checkbox" />
               <label htmlFor="checkbox">Remember me</label>
             </div>
-            <button onClick={(e) => handleLogin(e)}>Log in</button>
+            {isLoadingLogUser === false ? (
+              <button onClick={(e) => handleLogin(e)}>Log in</button>
+            ) : (
+              <ReactLoading
+                type="spin"
+                color="#000"
+                height={30}
+                width={30}
+                className="ml-10"
+              />
+            )}
           </form>
           <span className="passreset">Lost your password?</span>
         </div>
@@ -176,7 +211,17 @@ const LoginReg = () => {
               required
               onChange={(e) => setNewPassword(e.target.value)}
             />
-            <button onClick={(e) => handleRegister(e)}>Register</button>
+            {isLoadingRegUser === false ? (
+              <button onClick={(e) => handleRegister(e)}>Register</button>
+            ) : (
+              <ReactLoading
+                type="spin"
+                color="#000"
+                height={30}
+                width={30}
+                className="ml-10"
+              />
+            )}
           </form>
         </div>
       </div>

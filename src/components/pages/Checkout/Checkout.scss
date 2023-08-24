@@ -171,3 +171,149 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .menu {
+        font-size: 12px;
+    }
+
+    .checkoutwrapper {
+        flex-direction: column;
+        .checkoutleft {
+            .checklefttop {
+                .shippingcountry {
+                    h1 {
+                        font-size: 16px;
+                    }
+                }
+                .shippingaddress {
+                    h1 {
+                        font-size: 16px;
+                    }
+
+                    .checkform {
+                        .checklabel {
+                            font-size: 14px;
+                        }
+
+                        .checkinput {
+                            padding: 10px;
+                            font-size: 12px;
+                        }
+                        .checkcityregion {
+                            align-items: flex-start;
+                            flex-direction: column;
+                            .checkcity {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                            }
+                            .countrydropdown {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .checkleftbottom {
+                h1 {
+                    font-size: 16px;
+                }
+                .shippingmethod {
+                    .methodship {
+                        .methodradio {
+                            .radioship {
+                                width: 15px;
+                                height: 15px;
+                            }
+
+                            .radiolabel {
+                                font-size: 14px;
+                            }
+                        }
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                    p {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .menu {
+        font-size: 10px;
+    }
+
+    .checkoutwrapper {
+        .checkoutleft {
+            .checklefttop {
+                .shippingcountry {
+                    h1 {
+                        font-size: 14px;
+                    }
+                    .countrydropdown {
+                        padding: 10px;
+                        font-size: 12px;
+                    }
+                }
+                .shippingaddress {
+                    h1 {
+                        font-size: 14px;
+                    }
+
+                    .checkform {
+                        .checklabel {
+                            font-size: 12px;
+                        }
+
+                        .checkinput {
+                            padding: 10px;
+                            font-size: 10px;
+                        }
+                        .checkcityregion {
+                            .countrydropdown {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .checkleftbottom {
+                h1 {
+                    font-size: 14px;
+                }
+                .shippingmethod {
+                    .methodship {
+                        .methodradio {
+                            .radioship {
+                                width: 12px;
+                                height: 12px;
+                            }
+
+                            .radiolabel {
+                                font-size: 12px;
+                            }
+                        }
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                    p {
+                        font-size: 10px;
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

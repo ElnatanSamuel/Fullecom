@@ -30,10 +30,10 @@
         justify-content: space-between;
         padding: 0 10px;
         .leftlist {
+            opacity: 0.6;
             p {
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 600;
-                opacity: 0.6;
                 width: 150px;
                 cursor: pointer;
             }
@@ -50,6 +50,36 @@
                 opacity: 0.6;
                 font-size: 14px;
                 font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .listwrapper {
+        .toplist {
+            img {
+                height: 250px;
+            }
+            .listsale {
+                font-size: 12px;
+            }
+        }
+
+        .bottomlist {
+            .leftlist {
+                p {
+                    font-size: 14px;
+                }
+            }
+            .rightlist {
+                .originalpricelist {
+                    font-size: 18px;
+                }
+
+                .currentpricelist {
+                    font-size: 12px;
+                }
             }
         }
     }

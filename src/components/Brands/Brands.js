@@ -44,8 +44,8 @@ const Brands = () => {
     },
   ];
   return (
-    <div className="mt-8 pl-4">
-      <h1 className="text-3xl font-medium">Brands</h1>
+    <div className="mt-8 pl-6">
+      <h1 className="sm:text-2xl lg:text-3xl font-medium">Brands</h1>
       <div className="brands p-2 mt-6">
         {brandImg.map((image) => (
           <img key={image} src={image} alt="" />

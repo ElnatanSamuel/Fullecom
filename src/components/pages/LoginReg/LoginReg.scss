@@ -187,11 +187,85 @@
     }
 }
 
+@media (max-width: 768px) {
+    .loginreg {
+        .loginwrapper {
+            .loginleft {
+                h1 {
+                    font-size: 20px;
+                }
+                .welcome {
+                    font-size: 12px;
+                    opacity: 0.7;
+                }
+
+                .regemailerror {
+                    padding: 12px;
+                    font-size: 14px;
+                }
+                form {
+                    label {
+                        font-size: 12px;
+                    }
+                    .textfield {
+                        padding: 6px 14px;
+                    }
+                    button {
+                        padding: 12px 40px;
+                        font-size: 12px;
+                    }
+                }
+                .passreset {
+                    font-size: 12px;
+                }
+            }
+            .logincenter {
+                .or {
+                    width: 40px;
+                    height: 80px;
+                    font-size: 12px;
+                }
+            }
+            .loginright {
+                h1 {
+                    font-size: 20px;
+                }
+                .welcome {
+                    font-size: 12px;
+                }
+
+                .regemailerror {
+                    padding: 12px;
+                    font-size: 14px;
+                }
+
+                form {
+                    label {
+                        font-size: 12px;
+                    }
+
+                    .textfield {
+                        padding: 6px 14px;
+                    }
+                    button {
+                        padding: 12px 40px;
+                        font-size: 12px;
+                    }
+                }
+                .passreset {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 425px) {
     .loginreg {
         .loginwrapper {
             padding: 0px 40px;
             flex-direction: column;
+            gap: 100px;
             .logincenter {
                 display: none;
             }

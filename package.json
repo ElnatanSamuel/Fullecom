@@ -1,5 +1,6 @@
 {
   "name": "comnewer",
+  "homepage": "https://full.ecom/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +8,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.2",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,6 +17,8 @@
     "react-collapsible": "^2.10.0",
     "react-country-region-selector": "^3.6.1",
     "react-dom": "^18.2.0",
+    "react-loading": "^2.0.3",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "sass": "^1.64.1",

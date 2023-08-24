@@ -16,8 +16,15 @@ import Product from "./components/pages/Product/Product";
 import Checkout from "./components/pages/Checkout/Checkout";
 import Payment from "./components/pages/Payment/Payment";
 import UserAccount from "./components/pages/UserAccount/UserAccount";
+import { CartContext } from "./context/CartContext";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import OrderDetail from "./components/pages/OrderDetail/OrderDetail";
 
 const Layout = () => {
+  const [loggedUserEmail, etLoggedUserEmail] = useState("");
+  const [loggedUsername, setLoggedUsername] = useState("");
+
   return (
     <div className="app">
       <Navbar />
@@ -44,9 +51,14 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <CartPage />,
       },
+
       {
         path: "/account",
         element: <LoginReg />,
+      },
+      {
+        path: "/account/user",
+        element: <UserAccount />,
       },
       {
         path: "/product/:id",
@@ -61,18 +73,82 @@ const router = createBrowserRouter([
         element: <Payment />,
       },
       {
-        path: "/account/user",
-        element: <UserAccount />,
+        path: "/useraccount/orderdetail",
+        element: <OrderDetail />,
       },
     ],
   },
 ]);
 
 function App() {
+  const subtotalAmount = useSelector((state) => state.cart.subTotalAmount);
+  const [priceSubTotal, setPriceSubtotal] = useState(0);
+  const [categoryItems, setCategoryItems] = useState("");
+  const [brandCategoryItems, setBrandCategoryItems] = useState("");
+  const [maxPrice, setMaxPrice] = useState(10);
+  const [shippingMethod, setShippingMethod] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(subtotalAmount);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [streetName, setStreetName] = useState("");
+  const [city, setCity] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [shippingCountry, setShippingCountry] = useState("");
+  const [shippingRegion, setShippingRegion] = useState("");
+  const [formNotPassed, setFormNotPassed] = useState(false);
+  const [areItemsInCart, setAreItemsInCart] = useState(true);
+  const [fieldsEmpty, setFieldsEmpty] = useState(false);
+  const [paymentProcessed, setPaymentProcessed] = useState(false);
+  const [paymentError, setPaymentError] = useState(false);
+
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <CartContext.Provider
+      value={{
+        paymentError,
+        setPaymentError,
+        paymentProcessed,
+        setPaymentProcessed,
+        fieldsEmpty,
+        setFieldsEmpty,
+        areItemsInCart,
+        setAreItemsInCart,
+        setFormNotPassed,
+        formNotPassed,
+        shippingCountry,
+        setShippingCountry,
+        shippingRegion,
+        setShippingRegion,
+        priceSubTotal,
+        setPriceSubtotal,
+        categoryItems,
+        setCategoryItems,
+        brandCategoryItems,
+        setBrandCategoryItems,
+        maxPrice,
+        setMaxPrice,
+        shippingMethod,
+        setShippingMethod,
+        grandTotal,
+        setGrandTotal,
+        fullName,
+        setFullName,
+        email,
+        setEmail,
+        phoneNumber,
+        setPhoneNumber,
+        streetName,
+        setStreetName,
+        city,
+        setCity,
+        postalCode,
+        setPostalCode,
+      }}
+    >
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </CartContext.Provider>
   );
 }
 

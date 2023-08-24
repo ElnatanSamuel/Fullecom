@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const sliderParts = [
@@ -47,9 +48,12 @@ const Hero = () => {
                 <p className="text-white font-medium text-center">
                   {items.desc}
                 </p>
-                <button>
-                  {items.btn} <ArrowForwardOutlinedIcon />
-                </button>
+                <Link to="/products">
+                  <button>
+                    {items.btn}{" "}
+                    <ArrowForwardOutlinedIcon className="forwardicon" />
+                  </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

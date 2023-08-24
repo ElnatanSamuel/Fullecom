@@ -52,6 +52,7 @@
     .cartitems {
         display: flex;
         margin-top: 10px;
+        margin-bottom: 10px;
         .cartproduct {
             flex: 2;
             display: flex;
@@ -89,8 +90,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 gap: 30px;
-                margin-left: -30px;
+                margin-left: -15px;
                 .qualityadjust {
                     padding: 10px 15px;
                     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -122,6 +124,69 @@
                 font-size: 20px;
                 font-weight: 700;
                 opacity: 0.6;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .carttitle {
+        h1 {
+            font-size: 22px;
+            opacity: 0.7;
+        }
+        .cartdelete {
+            font-size: 12px;
+            .deleteicon {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .cartcontent {
+        .cartdesc {
+            font-size: 14px;
+        }
+
+        .cartitems {
+            .cartproduct {
+                .col {
+                    img {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    .producttitle {
+                        font-size: 16px;
+                        padding-bottom: 30px;
+                    }
+
+                    .productdesc {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .cartproductright {
+                margin-left: -20px;
+                .cartquantity {
+                    .qualityadjust {
+                        padding: 10px 10px;
+                        font-size: 14px;
+                        .quantityicon {
+                            font-size: 14px;
+                            cursor: pointer;
+                        }
+                    }
+                    .cartdelete {
+                        font-size: 12px;
+                        .deleteicon {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .cartprice {
+                    font-size: 16px;
+                }
             }
         }
     }

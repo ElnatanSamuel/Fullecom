@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./FeaturedProd.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,61 +14,27 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import ProductsData from "../../productData.json";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/Cartslice";
+import { CartContext } from "../../context/CartContext";
 
 const FeaturedProd = () => {
-  const products = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/6311445/pexels-photo-6311445.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Yellow sweater",
-      onSale: true,
-      originalPrice: 50,
-      currentPrice: 100,
-    },
-    {
-      id: 6,
-      img: "https://www.insidehook.com/wp-content/uploads/2022/01/Public-Rec-Shirt-Jacket.jpg?w=1500&resize=1500%2C1000",
-      title: "Black Shirt",
-      onSale: false,
-      originalPrice: 75,
-      currentPrice: 0,
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/6311274/pexels-photo-6311274.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Sweatpants and hoodie",
-      onSale: false,
-      originalPrice: 200,
-      currentPrice: 0,
-    },
-    {
-      id: 5,
-      img: "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjMxODU2NzcyNjEz/14-frame-heritage-jacket-in-supermoon.jpg",
-      title: "Black jacket",
-      onSale: true,
-      originalPrice: 125,
-      currentPrice: 250,
-    },
-    {
-      id: 3,
-      img: "https://images.pexels.com/photos/6311443/pexels-photo-6311443.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "T-Shirt",
-      onSale: false,
-      originalPrice: 23,
-      currentPrice: 0,
-    },
-    {
-      id: 4,
-      img: "https://images.pexels.com/photos/6311604/pexels-photo-6311604.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Hoodie",
-      onSale: true,
-      originalPrice: 40,
-      currentPrice: 80,
-    },
-  ];
+  const products = ProductsData.slice(0, 6);
+
+  const dispatch = useDispatch();
+
+  const { setPriceSubTotal, priceSubTotal } = useContext(CartContext);
+  const handleAddToCart = (item) => {
+    // const price = item.originalPrice * item.quantity;
+    // setPriceSubTotal(priceSubTotal + price);
+    dispatch(addToCart(item));
+  };
+
   return (
     <div className="mt-16">
-      <h1 className="text-3xl font-medium">Featured products</h1>
+      <h1 className="sm:text-2xl lg:text-3xl font-medium">Featured products</h1>
       <div className="products">
         <Swiper
           className="sliderthing"
@@ -83,12 +49,16 @@ const FeaturedProd = () => {
             <SwiperSlide key={item.id}>
               <div className="product">
                 <div className="top">
-                  <img src={item.img} alt="" />
+                  <Link to={"/product/" + item.id}>
+                    <img src={item.image[0]} alt="" />
+                  </Link>
                   {item.onSale === true ? <p>SALE</p> : null}
                 </div>
                 <div className="bottom">
                   <div className="description">
-                    <span className="title">{item.title}</span>
+                    <Link to={"/product/" + item.id}>
+                      <span className="title">{item.title}</span>
+                    </Link>
                     <div className="prices">
                       <span className="orignalprice">
                         ${item.originalPrice}
@@ -101,7 +71,7 @@ const FeaturedProd = () => {
                     </div>
                   </div>
                   <div className="icon">
-                    <button>
+                    <button onClick={(e) => handleAddToCart(item)}>
                       <ShoppingCartOutlinedIcon sx={{ fontSize: "20px" }} />
                     </button>
                   </div>

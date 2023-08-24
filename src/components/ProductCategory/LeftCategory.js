@@ -1,35 +1,68 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Slider from "@mui/material/Slider";
+import { CartContext } from "../../context/CartContext";
+import { useDispatch } from "react-redux";
+import {
+  BrandFilter,
+  CategoryFilter,
+  PriceFilter,
+  ResetFilter,
+} from "../../redux/CategorySlice";
 
 const LeftCategory = () => {
+  const [priceRange, setPriceRange] = useState(0);
+  const dispatch = useDispatch();
+
+  const {
+    categoryItems,
+    setCategoryItems,
+    brandCategoryItems,
+    setBrandCategoryItems,
+    setMaxPrice,
+    maxPrice,
+  } = useContext(CartContext);
   const allCategory = [
     {
       item: "Category",
-      subcat: ["Woman", "Men", "Kids", "Sporty", "Casual"],
+      catsubcat: ["Woman", "Men", "Kids", "Sporty", "Casual"],
     },
     {
       item: "Brands",
-      subcat: [
+      brandsubcat: [
         "Gucci",
         "Chanel",
         "D&G",
         "Adidas",
         "Calvin Klein",
         "Guess",
-        "Levis",
+        "Levi's",
         "Versace",
+        "Balenciaga",
       ],
     },
-    {
-      item: "Size",
-      subcat: ["Small", "Medium", "Large", "XL", "XXL"],
-    },
   ];
+
+  const handleCategorySelect = (category) => {
+    dispatch(CategoryFilter(category));
+  };
+
+  const handleCategoryReset = () => {
+    dispatch(ResetFilter());
+  };
+
+  const handleBrandSelect = (category) => {
+    dispatch(BrandFilter(category));
+  };
+
+  const handlePriceChange = (e) => {
+    dispatch(PriceFilter(e.target.value));
+    setPriceRange(e.target.value);
+  };
 
   return (
     <div className="left">
@@ -46,15 +79,33 @@ const LeftCategory = () => {
           </AccordionSummary>
           <AccordionDetails>
             <div className="subcategory">
-              {cat.subcat ? (
-                cat.subcat.map((subcategory) => (
-                  <Typography>
-                    <p className="catsub">{subcategory}</p>
-                  </Typography>
-                ))
-              ) : (
-                <span className="slider">$0{cat.slider}$1000</span>
-              )}
+              <p className="catsub" onClick={() => handleCategoryReset()}>
+                All
+              </p>
+              {cat.catsubcat
+                ? cat.catsubcat.map((subcategory) => (
+                    <Typography>
+                      <p
+                        className="catsub"
+                        onClick={() => handleCategorySelect(subcategory)}
+                      >
+                        {subcategory}
+                      </p>
+                    </Typography>
+                  ))
+                : null}
+              {cat.brandsubcat
+                ? cat.brandsubcat.map((subcategory) => (
+                    <Typography>
+                      <p
+                        className="catsub"
+                        onClick={() => handleBrandSelect(subcategory)}
+                      >
+                        {subcategory}
+                      </p>
+                    </Typography>
+                  ))
+                : null}
             </div>
           </AccordionDetails>
         </Accordion>
@@ -74,8 +125,13 @@ const LeftCategory = () => {
           <AccordionDetails>
             <Typography>
               <div className="pricerange">
-                $0
-                <input type="range" />
+                ${priceRange}
+                <input
+                  type="range"
+                  min={0}
+                  max={1000}
+                  onChange={(e) => handlePriceChange(e)}
+                />
                 $1000
               </div>
             </Typography>

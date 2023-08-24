@@ -1,0 +1,348 @@
+[
+  {
+    "id": 1,
+    "image": [
+      "https://images.pexels.com/photos/6311719/pexels-photo-6311719.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6311603/pexels-photo-6311603.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Grey hoodie",
+    "onSale": true,
+    "originalPrice": 50,
+    "currentPrice": 100,
+    "category": "Men",
+    "subCategory": "Hoodie",
+    "quantity": 1,
+    "brand": "Adidas",
+    "color": "Grey",
+    "popularity": 4,
+    "type": "Sporty",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 2,
+    "image": [
+      "https://www.loewe.com/dw/image/v2/BBPC_PRD/on/demandware.static/-/Library-Sites-LOW_SharedLibrary/default/dwfa9605b3/00000%20FW23%20PRECO%20THEMES/A%20WORKING%20WARDROBE/LOEWE_FW23_EDITORIAL_SHOW_THEMES_A_WORKING_WARDROBE_MENS_RGB_CROPPED_3x4_1.jpg?sw=450&sfrm=jpg"
+    ],
+    "title": "Loewe Sweater",
+    "onSale": false,
+    "originalPrice": 500,
+    "currentPrice": 0,
+    "category": "Men",
+    "subCategory": "Sweater",
+    "quantity": 1,
+    "brand": "Louis Vitton",
+    "color": "Grey",
+    "type": "Casual",
+    "popularity": 3,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 3,
+    "image": [
+      "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Vintage Tee",
+    "onSale": false,
+    "originalPrice": 30,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "T-shirt",
+    "quantity": 1,
+    "type": "Casual",
+    "brand": "Vintage",
+    "color": "Gray",
+    "popularity": 7,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 4,
+    "image": [
+      "https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Jeans Dress",
+    "onSale": true,
+    "originalPrice": 150,
+    "currentPrice": 300,
+    "category": "Woman",
+    "subCategory": "Dress",
+    "quantity": 1,
+    "brand": "D&G",
+    "color": "Jeans",
+    "type": "Fashionista",
+    "popularity": 6,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 5,
+    "image": [
+      "https://images.pexels.com/photos/1004642/pexels-photo-1004642.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Black Top",
+    "onSale": false,
+    "originalPrice": 300,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Top",
+    "quantity": 1,
+    "brand": "Guess",
+    "color": "Black",
+    "popularity": 2,
+    "type": "Fashionista",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 6,
+    "image": [
+      "https://images.pexels.com/photos/3705262/pexels-photo-3705262.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Flight jacket",
+    "onSale": false,
+    "originalPrice": 500,
+    "currentPrice": 0,
+    "category": "Men",
+    "subCategory": "Jacket",
+    "quantity": 1,
+    "brand": "D&G",
+    "color": "Green",
+    "type": "Casual",
+    "popularity": 9,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 7,
+    "image": [
+      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "title": "Cuff Top",
+    "onSale": false,
+    "originalPrice": 100,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Top",
+    "quantity": 1,
+    "brand": "Gucci",
+    "popularity": 10,
+    "type": "Fashionista",
+    "color": "Pink",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 8,
+    "image": [
+      "https://media.istockphoto.com/id/1080383896/photo/fashion-woman-wear-stylish-clothes-isolated-over-gray-background.jpg?s=170667a&w=0&k=20&c=kf7mHD4bQL4uPKWU3aCBoj0rKSVPYzYp-eefgHuG_lk="
+    ],
+    "title": "Dotted Top",
+    "onSale": false,
+    "originalPrice": 120,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Top",
+    "quantity": 1,
+    "brand": "Guess",
+    "color": "Black",
+    "popularity": 2,
+    "type": "Fashionista",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 9,
+    "image": [
+      "https://images.pexels.com/photos/7825916/pexels-photo-7825916.jpeg?cs=srgb&dl=pexels-%D0%BA%D0%B0%D1%80%D0%B8%D0%BD%D0%B0-%D0%BA%D0%B0%D1%80%D0%B6%D0%B0%D0%B2%D0%B8%D0%BD%D0%B0-7825916.jpg&fm=jpg",
+      "https://images.pexels.com/photos/7825909/pexels-photo-7825909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    ],
+    "title": "Cuffed Top",
+    "onSale": true,
+    "originalPrice": 160,
+    "currentPrice": 320,
+    "category": "Woman",
+    "subCategory": "Top",
+    "quantity": 1,
+    "brand": "Gucci",
+    "color": "white",
+    "popularity": 3,
+    "type": "Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 10,
+    "image": [
+      "https://studiobackdrops.com/wp-content/uploads/2019/12/Lunar-Grey-SF-SDF-021-2-1-400x500.jpg",
+      "https://studiobackdrops.com/wp-content/uploads/2019/12/Vintage-Violet-SF-HDP-001-1-1.jpg"
+    ],
+    "title": "Flared Pants",
+    "onSale": true,
+    "originalPrice": 340,
+    "currentPrice": 680,
+    "category": "Woman",
+    "subCategory": "Pants",
+    "quantity": 1,
+    "brand": "Levi's",
+    "color": "Yellow",
+    "popularity": 4,
+    "type": "Business Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 11,
+    "image": [
+      "https://st2.depositphotos.com/4720955/8694/i/950/depositphotos_86944574-stock-photo-fashion-model-woman-pose-in.jpg"
+    ],
+    "title": "Sundress",
+    "onSale": false,
+    "originalPrice": 300,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Dress",
+    "quantity": 1,
+    "brand": "D&G",
+    "color": "Gradient",
+    "popularity": 2,
+    "type": "Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 12,
+    "image": [
+      "https://img.freepik.com/premium-photo/full-length-pretty-brunette-lady-elegant-suit-looking-camera-isolated-grey-background-fashion-beauty-concept_132075-9359.jpg?w=2000"
+    ],
+    "title": "Woman Blazer",
+    "onSale": false,
+    "originalPrice": 500,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Blazers",
+    "quantity": 1,
+    "brand": "Gucci",
+    "color": "Brown",
+    "popularity": 3,
+    "type": "Business Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 13,
+    "image": [
+      "https://cdn.tatlerasia.com/tatlerasia/i/2023/04/26155239-dior-newjeans-haerin-kpop-ambassador-fashion-campaign-2023-photos-luxury-haerin-4-2_cover_1600x1305.jpg"
+    ],
+    "title": "Dior Tee",
+    "onSale": false,
+    "originalPrice": 100,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "T-shirt",
+    "quantity": 1,
+    "brand": "Dior",
+    "color": "Black",
+    "popularity": 4,
+    "type": "Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 14,
+    "image": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6FjDofiFS_G9_f03AdrlsyBKqX5qyMykidQI_A2t84uxmtveyitKpjHcWtcjrKmCq_yc&usqp=CAU"
+    ],
+    "title": "Floral Dress",
+    "onSale": false,
+    "originalPrice": 600,
+    "currentPrice": 0,
+    "category": "Woman",
+    "subCategory": "Dress",
+    "quantity": 1,
+    "brand": "D&G",
+    "color": "Blue",
+    "popularity": 4,
+    "type": "Fashionista",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 15,
+    "image": [
+      "https://i.pinimg.com/originals/20/53/03/205303dea0f35bb96dc81146184fea9e.jpg"
+    ],
+    "title": "Gray Pants",
+    "onSale": false,
+    "originalPrice": 500,
+    "currentPrice": 0,
+    "category": "Men",
+    "subCategory": "Pants",
+    "quantity": 1,
+    "brand": "Levi's",
+    "color": "Gray",
+    "popularity": 2,
+    "type": "Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 16,
+    "image": [
+      "https://www.newbalance.ca/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw34c5b740/images/page-designer/2022/13761_Comp_E1_Image2.jpg?sw=808&sfrm=jpg"
+    ],
+    "title": "Khakhi Pants",
+    "onSale": false,
+    "originalPrice": 300,
+    "currentPrice": 0,
+    "category": "Men",
+    "subCategory": "Pants",
+    "quantity": 1,
+    "brand": "Levi's",
+    "color": "Orange",
+    "popularity": 4,
+    "type": "Fashionista",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 17,
+    "image": [
+      "https://i.pinimg.com/564x/02/e2/35/02e235bae8855716ef4b32920d1fcadf.jpg"
+    ],
+    "title": "Softboy Sweater",
+    "onSale": true,
+    "originalPrice": 225,
+    "currentPrice": 450,
+    "category": "Men",
+    "subCategory": "Sweater",
+    "quantity": 1,
+    "brand": "CK",
+    "color": "Orange",
+    "type": "Casual",
+    "popularity": 3,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 18,
+    "image": [
+      "https://i.pinimg.com/564x/da/8c/f3/da8cf34dbd14a92bc1273e0a5b0743fc.jpg"
+    ],
+    "title": "Backless Sweater",
+    "onSale": true,
+    "originalPrice": 200,
+    "currentPrice": 400,
+    "category": "Women",
+    "subCategory": "Sweater",
+    "quantity": 1,
+    "brand": "CK",
+    "color": "Brown",
+    "popularity": 4,
+    "type": "Casual",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  },
+  {
+    "id": 19,
+    "image": [
+      "https://img.freepik.com/premium-photo/portrait-discontented-beautiful-young-girl-grey-dress-with-pigtail-head-standing-holding-red-glasses-looking-camera-with-resentful-face-indoor-isolated-studio-shot-gray-background_416530-10928.jpg",
+      "https://img.freepik.com/premium-photo/portrait-beautiful-attractive-fashion-model-grey-dress-with-makeup-hairstyle-standing-posing-with-hand-waist-looking-away-indoor-studio-shot-isolated-grey-background_416530-3637.jpg"
+    ],
+    "title": "Dinner Dress",
+    "onSale": false,
+    "originalPrice": 600,
+    "currentPrice": 0,
+    "category": "Women",
+    "subCategory": "Dress",
+    "quantity": 1,
+    "brand": "Balenciaga",
+    "color": "Grey",
+    "type": "Fashionista",
+    "popularity": 6,
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!"
+  }
+]

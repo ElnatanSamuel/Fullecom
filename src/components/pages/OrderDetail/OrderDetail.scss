@@ -1,0 +1,138 @@
+.orderdetailwrapper {
+    display: flex;
+    h1 {
+        font-size: 22px;
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    .orderdetailleft {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .orderuserdeatil {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                color: rgb(78, 78, 78);
+                span {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: rgb(22, 22, 22);
+                }
+            }
+        }
+
+        .ordershippingdetails {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                color: rgb(78, 78, 78);
+                span {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: rgb(22, 22, 22);
+                }
+            }
+        }
+    }
+
+    .orderdetailright {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .orderdetailwrapper {
+        h1 {
+            font-size: 18px;
+        }
+
+        .orderdetailleft {
+            flex: 1;
+            .orderuserdeatil {
+                p {
+                    font-size: 14px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .ordershippingdetails {
+                p {
+                    font-size: 14px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .orderdetailwrapper {
+        h1 {
+            font-size: 18px;
+        }
+
+        .orderdetailleft {
+            flex: 1;
+            .orderuserdeatil {
+                p {
+                    font-size: 14px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .ordershippingdetails {
+                p {
+                    font-size: 14px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .orderdetailwrapper {
+        flex-direction: column;
+        h1 {
+            font-size: 14px;
+        }
+
+        .orderdetailleft {
+            margin-bottom: 40px;
+            .orderuserdeatil {
+                p {
+                    font-size: 12px;
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .ordershippingdetails {
+                p {
+                    font-size: 12px;
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

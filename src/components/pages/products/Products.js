@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Products.scss";
 import LeftCategory from "../../ProductCategory/LeftCategory";
 import Accordion from "@mui/material/Accordion";
@@ -8,72 +8,92 @@ import Typography from "@mui/material/Typography";
 import Advert from "../../Advert/Advert";
 import Newsletter from "../../Newsletter/Newsletter";
 import ProductList from "../../ProductList/ProductList";
+import ProductsData from "../../../productData.json";
+import { CartContext } from "../../../context/CartContext";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  BestSellerFilter,
+  ResetFilter,
+  mostWantedFilter,
+} from "../../../redux/CategorySlice";
 
 const Products = () => {
-  const productsitems = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/6311445/pexels-photo-6311445.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Yellow sweater",
-      onSale: true,
-      originalPrice: 50,
-      currentPrice: 100,
-    },
-    {
-      id: 6,
-      img: "https://www.insidehook.com/wp-content/uploads/2022/01/Public-Rec-Shirt-Jacket.jpg?w=1500&resize=1500%2C1000",
-      title: "Black Shirt",
-      onSale: false,
-      originalPrice: 75,
-      currentPrice: 0,
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/6311274/pexels-photo-6311274.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Sweatpants and hoodie",
-      onSale: false,
-      originalPrice: 200,
-      currentPrice: 0,
-    },
-    {
-      id: 5,
-      img: "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjMxODU2NzcyNjEz/14-frame-heritage-jacket-in-supermoon.jpg",
-      title: "Black jacket",
-      onSale: true,
-      originalPrice: 125,
-      currentPrice: 250,
-    },
-    {
-      id: 3,
-      img: "https://images.pexels.com/photos/6311443/pexels-photo-6311443.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "T-Shirt",
-      onSale: false,
-      originalPrice: 23,
-      currentPrice: 0,
-    },
-    {
-      id: 4,
-      img: "https://images.pexels.com/photos/6311604/pexels-photo-6311604.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Hoodie",
-      onSale: true,
-      originalPrice: 40,
-      currentPrice: 80,
-    },
-  ];
+  const dispatch = useDispatch();
+  const categoryItems = useSelector((state) => state.category.categoryItem);
+  const brandCategoryItems = useSelector(
+    (state) => state.category.brandCategoryItem
+  );
+  const maxPrice = useSelector((state) => state.category.maxPrice);
+  const mostWantedItem = useSelector((state) => state.category.mostWantedItem);
+  const bestSellerItem = useSelector((state) => state.category.bestSellerItem);
+
+  const priceFilter = ProductsData.filter(
+    (item) => item.originalPrice >= maxPrice
+  );
+
+  const bestSellerFilter =
+    bestSellerItem !== ""
+      ? priceFilter.filter((items) => items.popularity >= 7)
+      : priceFilter;
+  const mostWantedFilters =
+    mostWantedItem !== ""
+      ? priceFilter.filter((items) => items.popularity >= 5)
+      : priceFilter;
+
+  const categoryFilter =
+    categoryItems !== ""
+      ? priceFilter.filter(
+          (items) =>
+            items.category === categoryItems || items.type === categoryItems
+        )
+      : priceFilter;
+
+  const brandFilter =
+    brandCategoryItems !== ""
+      ? priceFilter.filter((items) => items.brand === brandCategoryItems)
+      : priceFilter;
+
   return (
-    <div className="max-w-7xl m-auto px-8 mt-10">
-      <div className="menu">
+    <div className="max-w-7xl m-auto mt-10">
+      <div className="menu px-8">
         <p>Home</p> <span>&#62;</span>
         <span className="menunegative">Browse products</span>
       </div>
 
-      <div className="products mb-36">
+      <div className="products px-8 mb-36">
         <LeftCategory />
         <div className="right mt-2">
           <div className="results mb-10">
-            <p>Showing 0 result from total 0 for "woman"</p>
+            {categoryItems === "" &&
+            brandCategoryItems === "" &&
+            mostWantedItem === "" &&
+            bestSellerItem === "" ? (
+              <p>Showing all results</p>
+            ) : (
+              <p>
+                Showing{" "}
+                {categoryItems !== ""
+                  ? categoryFilter.length
+                  : brandCategoryItems !== ""
+                  ? brandFilter.length
+                  : mostWantedItem !== ""
+                  ? mostWantedFilters.length
+                  : bestSellerItem !== ""
+                  ? bestSellerFilter.length
+                  : null}{" "}
+                result from total {ProductsData.length} for{" "}
+                {categoryItems !== ""
+                  ? categoryItems
+                  : brandCategoryItems !== ""
+                  ? brandCategoryItems
+                  : mostWantedItem !== ""
+                  ? mostWantedItem
+                  : bestSellerItem !== ""
+                  ? bestSellerItem
+                  : null}
+              </p>
+            )}
             <div className="sortby">
-              <p>Sort by</p>
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -81,16 +101,47 @@ const Products = () => {
                   id="panel1a-header"
                 >
                   <Typography>
-                    <p className="sorttitle">Popularity</p>
+                    <p className="sorttitle font-bold">Sort by</p>
                   </Typography>
+                </AccordionSummary>
+                <AccordionSummary>
+                  <div className="flex flex-col gap-4">
+                    <Typography>
+                      <p onClick={() => dispatch(ResetFilter())}>None</p>{" "}
+                    </Typography>
+                    <Typography>
+                      <p
+                        onClick={() =>
+                          dispatch(mostWantedFilter("Most wanted"))
+                        }
+                      >
+                        Most Wanted
+                      </p>
+                    </Typography>
+                    <Typography>
+                      <p
+                        onClick={() =>
+                          dispatch(BestSellerFilter("Best seller"))
+                        }
+                      >
+                        Best Seller
+                      </p>
+                    </Typography>
+                  </div>
                 </AccordionSummary>
               </Accordion>
             </div>
           </div>
           <div className="list">
-            {productsitems.map((items) => (
-              <ProductList items={items} />
-            ))}
+            {categoryItems !== ""
+              ? categoryFilter.map((items) => <ProductList items={items} />)
+              : brandCategoryItems !== ""
+              ? brandFilter.map((items) => <ProductList items={items} />)
+              : mostWantedItem !== ""
+              ? mostWantedFilters.map((items) => <ProductList items={items} />)
+              : bestSellerItem !== ""
+              ? bestSellerFilter.map((items) => <ProductList items={items} />)
+              : priceFilter.map((items) => <ProductList items={items} />)}
           </div>
         </div>
       </div>

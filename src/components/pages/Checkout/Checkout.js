@@ -2,24 +2,11 @@ import React, { useState } from "react";
 import "./Checkout.scss";
 import Checkoutleft from "../../Checkoutleft/Checkoutleft";
 import Checkoutright from "../../Checkoutright/Checkoutright";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
-  const data = {
-    id: 5,
-    image: [
-      "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjMxODU2NzcyNjEz/14-frame-heritage-jacket-in-supermoon.jpg",
-      "https://images.pexels.com/photos/6311274/pexels-photo-6311274.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    title: "Black jacket",
-    onSale: true,
-    originalPrice: 125,
-    currentPrice: 250,
-    category: "Women",
-    subCategory: "Jackets",
-    brand: "Louie V",
-    color: "Black",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!",
-  };
+  const ProductItems = useSelector((state) => state.cart.cartItems);
+  const subtotalAmount = useSelector((state) => state.cart.subTotalAmount);
   return (
     <div className="max-w-7xl m-auto mt-10 px-6">
       <div className="menu">
@@ -29,8 +16,8 @@ const Checkout = () => {
       </div>
 
       <div className="checkoutwrapper">
-        <Checkoutleft data={data} />
-        <Checkoutright data={data} />
+        <Checkoutleft subtotal={subtotalAmount} />
+        <Checkoutright data={ProductItems} subtotal={subtotalAmount} />
       </div>
     </div>
   );

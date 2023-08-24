@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Payment.scss";
 import Checkoutright from "../../Checkoutright/Checkoutright";
 import Accordion from "@mui/material/Accordion";
@@ -7,38 +7,61 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import { useSelector } from "react-redux";
+import PaymentRight from "../../PaymentRight/PaymentRight";
+import { CartContext } from "../../../context/CartContext";
 
 const Payment = () => {
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingRegion, setShippingRegion] = useState("");
+  const ProductItems = useSelector((state) => state.cart.cartItems);
+  const subtotalAmount = useSelector((state) => state.cart.subTotalAmount);
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardName, setCardName] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
 
-  const data = {
-    id: 5,
-    image: [
-      "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjMxODU2NzcyNjEz/14-frame-heritage-jacket-in-supermoon.jpg",
-      "https://images.pexels.com/photos/6311274/pexels-photo-6311274.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    title: "Black jacket",
-    onSale: true,
-    originalPrice: 125,
-    currentPrice: 250,
-    category: "Women",
-    subCategory: "Jackets",
-    brand: "Louie V",
-    color: "Black",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!",
-  };
+  const {
+    fieldsEmpty,
+    areItemsInCart,
+    paymentError,
+    setPaymentError,
+    paymentProcessed,
+    setPaymentProcessed,
+  } = useContext(CartContext);
+
   return (
-    <div className="max-w-7xl m-auto px-8 mt-10">
+    <div className="max-w-7xl m-auto px-8 mt-10 relative">
       <div className="menu">
         <p>Cart</p> <span>&#62;</span>
         <p>Checkout</p>
         <span>&#62;</span>
         <span className="menunegative">Payment</span>
       </div>
+
+      {paymentProcessed === true ? (
+        <div className="paymentprocessing">
+          <p className="">Payment have been processed</p>
+          <img src="/img/greentick.png" alt="" className="" />
+        </div>
+      ) : paymentError === true ? (
+        <div className="paymentprocessing">
+          <p className="">Payment not processed, please try again</p>
+        </div>
+      ) : null}
+
       <div className="paymentwrapper">
         <div className="paymentleft">
           <div className="paymentmethods">
+            {fieldsEmpty === true ? (
+              <p className="sm: text-xs lg: w-full p-4 bg-red-600 text-white font-bold text-center rounded-lg mb-6">
+                Please fill all the required fields
+              </p>
+            ) : areItemsInCart === false ? (
+              <p className="sm: text-xs lg: w-full p-4 bg-red-600 text-white font-bold text-center rounded-lg mb-6">
+                No items in cart
+              </p>
+            ) : null}
             <h1>
               Select payment methods{" "}
               <span>(only credit card is currently available)</span>
@@ -56,11 +79,31 @@ const Payment = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <div className="selectpaymentinput">
-                    <input type="text" placeholder="Card number" />
-                    <input type="text" placeholder="Name on card" />
+                    <input
+                      type="text"
+                      placeholder="Card number"
+                      value={cardNumber}
+                      onChange={(e) => setCardNumber(e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      placeholder="Name on card"
+                      value={cardName}
+                      onChange={(e) => setCardName(e.target.value)}
+                    />
                     <div className="selectpaymentinputexpiry">
-                      <input type="text" placeholder="Expiration date(MM/YY)" />
-                      <input type="text" placeholder="CVV" />
+                      <input
+                        type="text"
+                        placeholder="Expiration date(MM/YY)"
+                        value={expirationDate}
+                        onChange={(e) => setExpirationDate(e.target.value)}
+                      />
+                      <input
+                        type="text"
+                        placeholder="CVV"
+                        value={cvv}
+                        onChange={(e) => setCvv(e.target.value)}
+                      />
                     </div>
                   </div>
                 </AccordionDetails>
@@ -75,7 +118,7 @@ const Payment = () => {
               </div>
             </div>
           </div>
-
+          {/* 
           <div className="billingaddress">
             <h1>Billing address</h1>
             <form className="checkform" action="">
@@ -132,9 +175,16 @@ const Payment = () => {
                 onChange={(e) => setShippingCountry(e)}
               />
             </form>
-          </div>
+          </div> */}
         </div>
-        <Checkoutright data={data} />
+        <PaymentRight
+          data={ProductItems}
+          subtotal={subtotalAmount}
+          cvv={cvv}
+          cardName={cardName}
+          cardNumber={cardNumber}
+          expirationDate={expirationDate}
+        />
       </div>
     </div>
   );

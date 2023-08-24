@@ -22,7 +22,7 @@
 
             img {
                 flex: 1;
-                width: 150px;
+                width: 10px;
                 height: 80px;
                 border-radius: 10px;
                 object-fit: cover;
@@ -163,6 +163,88 @@
                 font-size: 18px;
                 font-weight: 400;
                 margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .checkoutright {
+        h1 {
+            font-size: 16px;
+        }
+
+        .checkoutitems {
+            .checkoutitem {
+                img {
+                    width: 10px;
+                    height: 60px;
+                }
+
+                .checkoutitemdesc {
+                    .checkoutitemdesctitle {
+                        font-size: 14px;
+                    }
+                    .checkoutitemdesccolor {
+                        font-weight: 400;
+                        opacity: 0.5;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .checkoutitemprice {
+                font-size: 15px;
+            }
+        }
+
+        .checkoutdiscount {
+            .checkoutdiscountinput {
+                input {
+                    padding: 10px;
+                    font-size: 14px;
+                }
+
+                button {
+                    padding: 10px 15px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .newcustomercheckout {
+            font-size: 12px;
+        }
+
+        .checkoutrightbottom {
+            .cartchecktop {
+                .cartcheckleft {
+                    font-size: 14px;
+                    opacity: 0.6;
+                }
+                .cartcheckright {
+                    .cartsubtotal {
+                        font-size: 15px;
+                    }
+
+                    .cartdiscount {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .cartcheckbottom {
+                .checktotal {
+                    .cartgrandtotal {
+                        font-size: 18px;
+                    }
+                    .checkgrandtotal {
+                        font-size: 18px;
+                    }
+                }
+                .checkoutbtn {
+                    padding: 10px;
+                    font-size: 14px;
+                }
             }
         }
     }

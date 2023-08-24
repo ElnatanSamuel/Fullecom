@@ -82,3 +82,118 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .brands {
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+    }
+
+    .branddesc {
+        .branddescleft {
+            p {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .brandadvert {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        .advertwrapper {
+            .adverticon {
+                width: 30px;
+                height: 30px;
+                margin-left: 5px;
+            }
+
+            .description {
+                p {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                span {
+                    opacity: 0.6;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .brands {
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .branddesc {
+        .branddescleft {
+            p {
+                font-size: 18px;
+                width: 230px;
+            }
+        }
+        .branddescright {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .brandadvert {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 375px) {
+    .brands {
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .branddesc {
+        .branddescleft {
+            p {
+                font-size: 15px;
+                width: 150px;
+            }
+        }
+        .branddescright {
+            p {
+                font-size: 8px;
+            }
+        }
+    }
+
+    .brandadvert {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        .advertwrapper {
+            .adverticon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .description {
+                p {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+
+                span {
+                    opacity: 0.6;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

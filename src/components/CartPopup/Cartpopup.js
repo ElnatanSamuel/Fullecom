@@ -1,45 +1,54 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Cartpopup.scss";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import { useDispatch, useSelector } from "react-redux";
+import { CartContext } from "../../context/CartContext";
+import { deleteFromCart, removeAllFromCart } from "../../redux/Cartslice";
 
 const Cartpopup = () => {
-  const data = {
-    id: 5,
-    image: [
-      "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjMxODU2NzcyNjEz/14-frame-heritage-jacket-in-supermoon.jpg",
-      "https://images.pexels.com/photos/6311274/pexels-photo-6311274.jpeg?auto=compress&cs=tinysrgb&w=600",
-    ],
-    title: "Black jacket",
-    onSale: true,
-    originalPrice: 125,
-    currentPrice: 250,
-    category: "Women",
-    subCategory: "Jackets",
-    brand: "Louie V",
-    color: "Black",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laudantium quia porro animi est suscipit architecto autem facilis quis beatae!",
+  const ProductsList = useSelector((state) => state.cart.cartItems);
+  const subtotalAmount = useSelector((state) => state.cart.subTotalAmount);
+  const { setPriceSubTotal, priceSubTotal } = useContext(CartContext);
+
+  const dispatch = useDispatch();
+
+  const handleResetCart = () => {
+    dispatch(removeAllFromCart());
   };
+
+  const handleDeleteItem = (data) => {
+    console.log(data);
+    dispatch(deleteFromCart(data));
+  };
+
   return (
     <div className="cart">
       <h1>Products in cart</h1>
       <div className="cartitems">
-        <div className="item">
-          <div className="left">
-            <img src={data.image[0]} alt="" />
-            <div className="details">
-              <h1>{data.title}</h1>
+        {ProductsList?.map((data) => (
+          <div className="item">
+            <div className="left">
+              <img src={data.image[0]} alt="" />
+              <div className="details">
+                <h1>{data.title}</h1>
 
-              <div className="price">1 x ${data.originalPrice}</div>
+                <div className="price">
+                  {data.quantity} x ${data.originalPrice}
+                </div>
+              </div>
             </div>
+            <DeleteOutlinedIcon
+              className="delete"
+              onClick={() => handleDeleteItem(data.id)}
+            />
           </div>
-          <DeleteOutlinedIcon className="delete" />
-        </div>
+        ))}
       </div>
 
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>${data.originalPrice}</span>
+        <span>${subtotalAmount}</span>
       </div>
       <div className="btns">
         <Link to="/checkout">
@@ -49,7 +58,9 @@ const Cartpopup = () => {
           <button className="gotocart">Go to cart</button>
         </Link>
       </div>
-      <span className="reset">Reset cart</span>
+      <span className="reset" onClick={() => handleResetCart()}>
+        Reset cart
+      </span>
     </div>
   );
 };
